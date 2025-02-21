@@ -15,7 +15,7 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-poppins',
-})
+});
 
 export const metadata = {
   title: "Ye Phone Kyaw ",
@@ -24,14 +24,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div suppressContentEditableWarning={true}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}`}>
+      <body className="antialiased">
         {children}
-
-        </div>
       </body>
     </html>
   );

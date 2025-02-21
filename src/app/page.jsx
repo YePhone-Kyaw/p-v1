@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";

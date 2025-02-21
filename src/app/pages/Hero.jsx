@@ -1,23 +1,23 @@
 import React from "react";
 import { socialMedia } from "../constants";
-import Icon from "../components/icons/icon";
+import Icon from "../../components/icon";
 
 const Hero = () => {
   return (
-    <main className="max-w-6xl p-40 lg:flex lg:w-full md:w-[30%]">
-      <div className="flex flex-col space-y-4">
-        <h5 className="text-s font-sans text-teal-400">
+    <main className="flex flex-col items-center h-100vh min-h-100vh p-0 md:h-auto sm:h-auto">
+      <div className="">
+        <h1 className="ml-[30px] mb:[4px] sm:ml-[20px] sm:mb-[2px] text-teal-400">
           Hi, my name is
-        </h5>
+        </h1>
         <div className="flex items-center">
-          <h1 className="text-8xl font-sans">Ye Phone Kyaw</h1>
+          <h1 className="text-6xl font-sans">Ye Phone Kyaw</h1>
         </div>
         <p className="mb-6">
           I'm junior software developer based in Calgary, Alberta, Canada. I'm
           really passionate about coding, problem-solving.
         </p>
 
-    <div className="list-none">
+    <div className=''>
     <ul className="flex gap-5">
           {socialMedia.map((item) => (
             <li key={item.id}>

@@ -1,8 +1,8 @@
-const { default: IconDownload } = require("./download");
-const { default: IconFacebook } = require("./facebook");
-const { default: IconGitHub } = require("./github");
-const { default: IconInstagram } = require("./instagram");
-const { default: IconLinkedin } = require("./linkedin");
+const { default: IconDownload } = require("./icons/download");
+const { default: IconFacebook } = require("./icons/facebook");
+const { default: IconGitHub } = require("./icons/github");
+const { default: IconInstagram } = require("./icons/instagram");
+const { default: IconLinkedin } = require("./icons/linkedin");
 
 import PropTypes from "prop-types";
 

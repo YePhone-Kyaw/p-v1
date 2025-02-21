@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { navLinks } from "../constants";
+import { navLinks } from "../app/constants";
 
 const Navbar = () => {
   // const [isMounted, setIsMounted] = useState(!isHome);
