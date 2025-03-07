@@ -5,14 +5,33 @@ import { navLinks } from "../app/constants";
 
 const Navbar = () => {
   // const [isMounted, setIsMounted] = useState(!isHome);
+  // const [scrolledToTop, setScrolledToTop] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolledToTop, setScrolledToTop] = useState(false);
+  const [previousScroll, setPreviousScroll] = useState(0);
+  const [visible, setVisible] = useState(true);
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
-  const nodeRef = useRef();
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  }
+
+  // const nodeRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      setVisible(previousScroll > currentScroll || currentScroll < 10);
+      setPreviousScroll(currentScroll);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+
+    return() => window.removeEventListener('scroll', handleScroll);
+  }, [previousScroll]);
 
   return (
-    <nav className="shadow-md transition-all duration-300">
+    <>
+    <nav className={`fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-8xl mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-7">
@@ -62,6 +81,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+    </nav>
+
       {/* Mobile menu */}
       {isOpen && (
         <div className="fixed inset-0 z-50">
@@ -89,6 +110,7 @@ const Navbar = () => {
                     <a
                       href={item.href}
                       className="block py-2 px-4 text-sm text-neutral-300 hover:text-teal-400 transition duration-300"
+                      onClick={handleLinkClick}
                     >
                       {item.name}
                     </a>
@@ -99,7 +121,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </>
+    
   );
 };
 

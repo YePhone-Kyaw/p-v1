@@ -8,7 +8,7 @@ import Skills from "./pages/Skills";
 
 export default function Home() {
   return (
-    <main className="bg-blue-950/30 h-screen">
+    <main className="flex flex-col bg-blue-950/30">
       <Navbar />
       <Hero />
       <About />
