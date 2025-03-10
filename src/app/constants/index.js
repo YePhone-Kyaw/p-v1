@@ -26,6 +26,41 @@ export const navLinks = [
     }
 ]
 
+export const skills = [
+    {
+        id: 1,
+        name: 'JavaScript',
+    },
+    {
+        id: 2,
+        name: 'React',
+    },
+    {
+        id: 3,
+        name: 'TypeScript',
+    },
+    {
+        id: 4,
+        name: 'HTML',
+    },
+    {
+        id: 5,
+        name: 'CSS',
+    },
+    {
+        id: 6,
+        name: 'Python',
+    },
+    {
+        id: 7,
+        name: 'Java',
+    },
+    {
+        id: 8,
+        name: 'C#',
+    }
+]
+
 export const socialMedia = [
     {
         id: 1,

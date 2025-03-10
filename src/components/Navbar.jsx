@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { navLinks } from "../app/constants";
+import { firaCode } from "@/fonts/fonts";
 
 const Navbar = () => {
   // const [isMounted, setIsMounted] = useState(!isHome);
@@ -31,7 +32,7 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className={`fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed top-0 left-0 right-0 transition-transform duration-300 z-50 ${visible ? 'translate-y-0' : '-translate-y-full'}  bg-opacity-50 shadow-md backdrop-filter backdrop-blur-md`}>
       <div className="max-w-8xl mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-7">
@@ -43,7 +44,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <div className="hidden md:flex items-center space-x-1">
+          <div className={`${firaCode.className} hidden md:flex items-center space-x-1`}>
             {/* Desktop menu */}
             <ul className="flex space-x-4">
               {navLinks.map((item) => (
