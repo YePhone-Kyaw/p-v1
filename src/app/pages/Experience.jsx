@@ -12,8 +12,9 @@ const Experience = () => {
           <h1 className="flex text-2xl text-teal-300">Experience</h1>
           <span className="bg-teal-300 w-[100px] h-[1px] "></span>
         </div>
-        <div>
-          image
+        <div className="flex bg-gray-500/20">
+          <h3>React Native Music Player</h3>
+          <p></p>
         </div>
       </div>
     </section>
