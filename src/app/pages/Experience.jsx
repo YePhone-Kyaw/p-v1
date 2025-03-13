@@ -14,7 +14,14 @@ const Experience = () => {
         </div>
         <div className="flex bg-gray-500/20">
           <h3>React Native Music Player</h3>
-          <p></p>
+          <div>
+          <div className="flex h-40 gap-3">
+            <img src="/music-app1.png" alt="music-app" />
+            <img src="/music-app2.png" alt="music-app" />
+          </div>
+
+            <p></p>
+          </div>          
         </div>
       </div>
     </section>
