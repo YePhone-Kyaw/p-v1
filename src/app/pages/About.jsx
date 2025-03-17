@@ -3,17 +3,19 @@ import React from "react";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="flex flex-col h-screen w-full items-center justify-center "
-    >
-      <div className="flex flex-col ml-10 mr-10">
+   <section
+  id="about"
+  className="flex flex-col h-screen w-full items-center justify-center px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32"
+>
+  <div className="w-full max-w-5xl">
       <div className={`${firaCode.className} flex items-center gap-5 mb-10`}>
           <h1 className="flex text-2xl text-teal-300">About Me</h1>
           <span className="bg-teal-300 w-[100px] h-[1px] "></span>
         </div>
       <div className="flex flex-col md:flex-row justify-between md:items-start items-center">
-        <div className={`${poppins.className} text-md flex flex-col gap-5 lg:max-w-[600px] md:max-w-[520px] max-w-[450px]`}>
+        <img src="/me.jpg" alt="profile" className="h-64 w-56 mb-10 rounded-lg md:hidden"/>
+
+        <div className={`${poppins.className} text-md flex flex-col gap-5 lg:max-w-[700px] md:max-w-[600px] max-w-full`}>
           <p >
             Hello! My name is Ye Phone (George) and I recently graduated from
             Southern Alberta Institute of Technology{" "}
@@ -35,17 +37,8 @@ const About = () => {
               My strengths lie in problem-solving, collaborative teamwork, and
               quickly adapting to new technologies.
             </p>
-            {/* <div>
-              <p>
-                Here are a few technologies I'm proficient and been working with
-                recently:
-              </p>
-              <ul>
-                <li></li>
-              </ul>
-            </div> */}
         </div>
-        <img src="/me.jpg" alt="profile" className=" md:ml-20 md:mt-0 mt-14 h-64 w-56 rounded-lg "/>
+        <img src="/me.jpg" alt="profile" className="md:ml-10 mt-0 lg:ml-20 h-64 w-56 rounded-lg hidden md:block"/>
       </div>
       </div>
             
