@@ -3,13 +3,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { navLinks } from "../app/constants";
 import { firaCode } from "@/fonts/fonts";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
-  // const [isMounted, setIsMounted] = useState(!isHome);
-  // const [scrolledToTop, setScrolledToTop] = useState(false);
+
   const [isOpen, setIsOpen] = useState(false);
   const [previousScroll, setPreviousScroll] = useState(0);
   const [visible, setVisible] = useState(true);
+
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   const handleLinkClick = () => {
@@ -37,11 +38,11 @@ const Navbar = () => {
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div>
-              <a href="/" className="flex items-center py-4 px-2">
+              <Link to="top" smooth={true} duration={300} offset={0} className="flex items-center py-4 px-2 cursor-pointer">
                 <span className="font-semibold text-neutral-300 text-lg">
                   YPK
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className={`${firaCode.className} hidden md:flex items-center space-x-1`}>
@@ -49,12 +50,15 @@ const Navbar = () => {
             <ul className="flex space-x-4">
               {navLinks.map((item) => (
                 <li key={item.id}>
-                  <a
-                    href={item.href}
-                    className="py-4 px-2 text-neutral-300 hover:text-teal-400 transition duration-300"
+                  <Link
+                    to={item.href.replace('#', '')}
+                    smooth={true}
+                    duration={300}
+                    offset={0}
+                    className="py-4 px-2 text-neutral-300 hover:text-teal-400 transition duration-300 cursor-pointer"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,14 +71,14 @@ const Navbar = () => {
               <img
                 src="/menu.svg"
                 alt="menu"
-                className={`absolute inset-0 w-6 h-6 transition-opacity duration-300 ${
+                className={`absolute inset-0 w-6 h-6 duration-300 ${
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
               <img
                 src="/close.svg"
                 alt="close"
-                className={`absolute inset-0 w-6 h-6 transition-opacity duration-300 ${
+                className={`absolute inset-0 w-6 h-6 ${
                   isOpen ? "opacity-100" : "opacity-0"
                 }`}
               />
@@ -108,13 +112,16 @@ const Navbar = () => {
               <ul className="pt-16 pb-3 flex flex-col">
                 {navLinks.map((item) => (
                   <li key={item.id}>
-                    <a
-                      href={item.href}
+                    <Link
+                    to={item.href.replace('#', '')}
+                    smooth={true}
+                    duration={300}
+                    offset={0}
                       className="block py-2 px-4 text-sm text-neutral-300 hover:text-teal-400 transition duration-300"
                       onClick={handleLinkClick}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
